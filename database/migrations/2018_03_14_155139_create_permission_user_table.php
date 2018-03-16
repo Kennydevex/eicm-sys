@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableArticle extends Migration
+class CreatePermissionUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTableArticle extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('permission_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->text('content');
             $table->timestamps();
         });
     }
@@ -28,7 +26,6 @@ class CreateTableArticle extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
-        
+        Schema::dropIfExists('permission_user');
     }
 }
