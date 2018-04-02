@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Exceptions;
-
+use Illuminate\Auth\AuthenticationException;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -49,5 +49,15 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
+    }
+
+    //Este método permite configurar o comportamaneto do sistema quando, o utilizador tenta acessar
+    //um URL que não tem permissão, esta, atraves do middlaware.
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+      //Aqui especificamos o nome do route a ser acassado caso o acesso não seja para request de um json.
+        return $request->expectsJson()
+                ? response()->json(['message' => $exception->getMessage()], 401)
+                : redirect()->guest(route('login'));
     }
 }

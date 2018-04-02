@@ -14,8 +14,14 @@ class CreateFolksTable extends Migration
     public function up()
     {
         Schema::create('folks', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->string('first_name', 50);
+          $table->string('last_name', 50);
+          $table->string('identification_card', 15);//Identificatio Card: Bilhete de Identidade
+          $table->enum('gender', ['M', 'F']);
+          $table->string('email', 60);
+          $table->string('phone_number', 20);
+          $table->timestamps();
         });
     }
 

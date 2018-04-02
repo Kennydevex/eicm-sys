@@ -36,4 +36,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    //Este método será utilizado para permitir que os utilizadores
+    //autentiquem utilizando os seus nomes de utilizadores
+
+  /*  public function username()
+    {
+        return 'username';
+    }*/
 }

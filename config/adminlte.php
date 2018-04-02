@@ -12,6 +12,7 @@ return [
     | You can optionally also specify a title prefix and/or postfix.
     |
     */
+    
 
     'title' => 'EICM',
 
