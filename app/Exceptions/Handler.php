@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace EICM\Exceptions;
 use Illuminate\Auth\AuthenticationException;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

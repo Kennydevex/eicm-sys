@@ -4,7 +4,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('auth');
+})->middleware('auth'); //Quer dizere que o utilizador tem de estar autenticado para poder acessar à esta página
 
 //##############################  Backend  ############################################
 Auth::routes();

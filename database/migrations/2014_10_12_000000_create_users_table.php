@@ -20,6 +20,21 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+
+            /*$table->increments('id');
+            $table->string('username');
+            $table->string('password');
+            $table->boolean('status');
+            $table->unsignedInteger('folk_id');
+            $table->rememberToken();
+            $table->timestamps();
+
+            //-----------------Relacionamentos-----------------------------
+
+            $table->foreign('folk_id')->references('id')->on('folks')->onDelete('cascade');*/
+
+
         });
     }
 
