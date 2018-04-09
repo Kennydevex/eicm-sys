@@ -10,7 +10,7 @@
 @section('body')
     <div class="register-box">
         <div class="register-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>EICM</b>GDC') !!}</a>
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
 
         <div class="register-box-body">
@@ -18,13 +18,33 @@
             <form action="{{ url(config('adminlte.register_url', 'register')) }}" method="post">
                 {!! csrf_field() !!}
 
-                <div class="form-group has-feedback {{ $errors->has('name') ? 'has-error' : '' }}">
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                           placeholder="{{ trans('adminlte::adminlte.full_name') }}">
+                <div class="form-group has-feedback {{ $errors->has('first_name') ? 'has-error' : '' }}">
+                    <input type="text" name="first_name" class="form-control" value="{{ old('first_name') }}"
+                           placeholder="{{ trans('adminlte::adminlte.first_name') }}">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    @if ($errors->has('name'))
+                    @if ($errors->has('first_name'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
+                            <strong>{{ $errors->first('first_name') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group has-feedback {{ $errors->has('last_name') ? 'has-error' : '' }}">
+                    <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}"
+                           placeholder="{{ trans('adminlte::adminlte.last_name') }}">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @if ($errors->has('last_name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('last_name') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group has-feedback {{ $errors->has('username') ? 'has-error' : '' }}">
+                    <input type="text" name="username" class="form-control" value="{{ old('username') }}"
+                           placeholder="{{ trans('adminlte::adminlte.username') }}">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @if ($errors->has('username'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('username') }}</strong>
                         </span>
                     @endif
                 </div>

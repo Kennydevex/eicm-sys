@@ -211,6 +211,8 @@ return [
 
         //##################################### Models ####################
         'User' => EICM\Models\System\User::class,
+        'Logon' => EICM\Models\System\Logon::class,
+        'Folk' => EICM\Models\Helpers\Folk::class,
 
     ],
 

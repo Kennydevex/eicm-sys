@@ -16,8 +16,10 @@ class User extends Authenticatable
    */
   protected $fillable = [
       'name',
-      'email',
+      'username',
       'password',
+      'status',
+      'folk_id',
   ];
 
   /**
@@ -32,8 +34,8 @@ class User extends Authenticatable
   //################################ Relacionamentos ####################
 
 
-  /*public function folk()
+  public function folk()
   {
       return $this->belongsTo('Folk');
-  }*/
+  }
 }
