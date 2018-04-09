@@ -2,6 +2,7 @@
 
 return [
 
+  'login'                   => 'Email ou Nome de Utilizador',
   'first_name'                   => 'Primeiro Nome',
   'last_name'                   => 'Apelido',
   'username'                   => 'Nome de Utilizador',
