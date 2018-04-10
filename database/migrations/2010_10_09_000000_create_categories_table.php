@@ -6,26 +6,33 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCategoriesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
-    }
+  /**
+  * Run the migrations.
+  *
+  * @return void
+  */
+  public function up()
+  {
+    Schema::create('categories', function (Blueprint $table) {
+      $table->increments('id');
+      $table->string('name', 100)->unique();
+      $table->text('description', 500);
+      $table->unsignedInteger('entity_id');
+      $table->timestamps();
+      /*
+      -----------------Relacionamentos-----------------------------
+      */
+      $table->foreign('entity_id')->references('id')->on('entities')->onDelete('cascade');
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('categories');
-    }
+  /**
+  * Reverse the migrations.
+  *
+  * @return void
+  */
+  public function down()
+  {
+    Schema::dropIfExists('categories');
+  }
 }
