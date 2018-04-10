@@ -15,7 +15,8 @@ class CreateEntitiesTable extends Migration
     {
         Schema::create('entities', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name', 60)->unique();
+            $table->text('description', 200);
         });
     }
 
