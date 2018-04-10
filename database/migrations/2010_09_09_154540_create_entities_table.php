@@ -17,6 +17,7 @@ class CreateEntitiesTable extends Migration
             $table->increments('id');
             $table->string('name', 60)->unique();
             $table->text('description', 200);
+            $table->boolean('status');
         });
     }
 
